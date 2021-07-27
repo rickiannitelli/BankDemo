@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterXML>
+  <mfds>BANKDEMO.xml</mfds>
+  <cics-sit>BANKDEMO_sit.xml</cics-sit>
+  <cics-startl>BANKDEMO_stul.xml</cics-startl>
+  <cics-groups>BANKDEMO_grps.xml</cics-groups>
+  <catalog>BANKDEMO_catlg.xml</catalog>
+  <ims-config>BANKDEMO_imscfg.xml</ims-config>
+  <eza-config>BANKDEMO_ezaconfg.xml</eza-config>
+</MasterXML>

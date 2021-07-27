@@ -1,0 +1,27 @@
+
+* Micro Focus COBOL Profiler                         18-Jun-21 18:07
+* ZBNKPRT1
+Total time:         32 milliseconds.      Module loaded once.
+-------------------------------------------------------------------------------
+Call Count  Program
+-------------------------------------------------------------------------------
+         1  ZBNKPRT1
+-------------------------------------------------------------------------------
+% time      time   entries  micros/entry  (paragraph OF) Section
+-------------------------------------------------------------------------------
+ 50.00        16        11      1455      DISPLAY-CONSOLE-MESSAGE
+ 50.00        16         1     16000      ZBNKPRT1:{procedure division}
+  0.00         0        68         0      PRINTOUT-PUT
+  0.00         0        58         0      EXTRACT-GET
+  0.00         0        57         0      FORMAT-AND-PRINT
+  0.00         0        54         0      EXPAND-STATE-PROV-LOOP
+  0.00         0         7         0      PRINT-TOTAL-TXNS
+  0.00         0         2         0      PRINT-TOTAL-ASSETS
+  0.00         0         2         0      RUN-TIME
+  0.00         0         1         0      EXTRACT-OPEN
+  0.00         0         1         0      EXTRACT-CLOSE
+  0.00         0         1         0      PRINTOUT-OPEN
+  0.00         0         1         0      PRINTOUT-CLOSE
+  0.00         0         1         0      EXPAND-STATE-PROV
+  0.00         0         1         0      EXPAND-STATE-PROV-EXIT
+

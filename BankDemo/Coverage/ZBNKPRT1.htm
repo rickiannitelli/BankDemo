@@ -1,0 +1,879 @@
+<!-- saved from url=(0016)http://localhost -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script>
+var whichWin = "T"
+var whichLoc = "?"
+function displayMenu (pName, rName)
+{
+ document.write("    <!-- menu -->               ");
+ document.write("    <table width=\"100%\" border=\"0\"");
+ document.write("     cellspacing=\"0\"          ");
+ document.write("     cellpadding=\"0\"          ");
+ document.write("    class=\"navOutline\">       ");
+ document.write("     <tr>                       ");
+ document.write("      <td>                      ");
+ document.write("       <table width=\"100%\"    ");
+ document.write("        border=\"0\"            ");
+ document.write("        cellspacing=\"1\"       ");
+ document.write("        cellpadding=\"1\">      ");
+ document.write("        <tr class=\"content\">  ");
+ document.write("         <td width=\"20%\"      ");
+ document.write("           class=\"leftNavTitle\">  ");
+ document.write("          &nbsp;                ");
+ document.write("           Micro Focus           ");
+ document.write("           &nbsp;</td>           ");
+ document.write("         <td width=\"80%\"       ");
+ document.write("           class=\"rightNavTitle\">  ");
+ document.write("          &nbsp;                 ");
+ document.write("        " + rName + "   &nbsp;   ");
+ document.write("           &nbsp;  </td>         ");
+ document.write("        </tr>                    ");
+ document.write("        <tr>                     ");
+ document.write("         <td class=\"navBarColor\"  ");
+ document.write("            colspan=\"2\">        ");
+ document.write("         </td>                    ");
+ document.write("        </tr>                     ");
+ document.write("       </table>                   ");
+ document.write("      </td>                       ");
+ document.write("     </tr>                        ");
+ document.write("    </table>                      ");
+ document.write("    <!-- end menu -->             ");
+ }
+ function rad_onclick(radIndex)
+{
+var returnVal= true;
+if (radIndex == 0)
+    {
+    whichWin = "T";
+    }
+else
+    {
+     whichWin  = "N";
+     }
+return returnVal;
+}
+function butCheck_onclick(selection)
+{
+var returnVal= true;
+if ( whichWin == "T" )
+    {
+    window.location =
+    selection.options[selection.options.selectedIndex].value;
+    }
+else
+    {
+     returnVal =
+open(selection.options[selection.options.selectedIndex].value,
+    "_blank");
+     }
+return returnVal;
+}
+function greySelect (selectName)
+{
+   var returnVal = true;
+   var element = (document.getElementById(selectName));
+   element.disabled = true;
+   return returnVal;
+}
+</script>
+<title>ZBNKPRT1 - TEST COVERAGE</title>
+</head>
+<STYLE TYPE="text/css">
+body {
+        background : #FFFFFF;
+        color : #000000;
+         font-family : Helvetica,Lucida,Arial,sans-serif;
+        margin : 0pt;
+}
+
+/* link color */
+a {
+       color : #0050a0;
+        text-decoration : none;
+        background : transparent;
+}
+
+/* active link */
+a:active {
+        color : #0000cc;
+        background : transparent;
+}
+
+/* hover anywhere */
+a:hover {
+        color : #0000cc;
+        background : transparent;
+}
+
+/* link on navBar */
+a.navBar {
+        color : #dddddd;
+        font-weight : bold;
+        background : transparent;
+        font-size : 80%;
+}
+
+/* link hover on navBar */
+a.navBar:hover {
+        color : #00aaff;
+        background : transparent;
+}
+
+/* link inside content tables */
+a.highlightNav {
+        color : #00aaff;
+        font-weight : bold;
+        background : transparent;
+        font-size : 80%;
+}
+
+/* any link text hover  */
+a.highlightNav:hover {
+        color : #00aaff;
+        background : transparent;
+}
+
+/* navigation links on top right of content tables */
+a.rightTitle {
+        color : #dddddd;
+        background : transparent;
+}
+
+/* navig links on top right of content tables (hover) */
+a.rightTitle:hover {
+        color : #00aaff;
+        background : transparent;
+}
+
+/* outline of the navBar at the top */
+table.navOutline {
+        background : #000000;
+        color : #ff0000;
+}
+
+/* outline color of content tables */
+table.outline {
+        background : #000000;
+        color : #ff0000;
+}
+
+/* color of content tables */
+table.content {
+        background : #d0d0d0;
+        color : #000000;
+}
+
+/* row color for content tables */
+tr.content {
+        background : #d0d0d0;
+        color : #000000;
+        font-size : 90%;
+}
+
+/* color of navBar background and text */
+td.navBarColor {
+        background : #000000;
+        color : #cccccc;
+}
+
+td.leftTitle {
+        background : #305080;
+        color : #dddddd;
+        font-weight : bold;
+        font-size : 90%;
+}
+
+td.leftNavTitle {
+        background : #305080;
+        color : #dddddd;
+        font-weight : bold;
+        font-size : 150%;
+}
+
+/* title text */
+td.rightNavTitle {
+        background : #d0d0d0;
+        color : #000000;
+        font-weight : bold;
+        font-size : 150%;
+}
+
+/* top right section of content table */
+td.rightTitle {
+        background : #484848;
+        color : #ffffff;
+        font-weight : bold;
+        font-size : 80%;
+}
+
+/* color of the date on the right of navBar */
+.dateText {
+        color : #808080;
+        background : transparent;
+}
+
+/* any text out of the content tables */
+.normalText {
+        color : #dddddd;
+        background : transparent;
+        font-size : 70%;
+}
+/* any unexecuted lines */
+  p.unex { color : #0050a0; font-family: Courier New }
+</style>
+<body> <form>
+
+<a name="doctop"></a>
+<table width="100%" border="0">
+<tr>
+<td>
+<br>
+<script type="text/javascript">
+    displayMenu ("TCREPORT ","Test Coverage Report", "../");
+</script>
+<table border="1" width="100%" class="content">
+  <tr>
+    <td width="20%">Report Generated</td>
+    <td width="80%"> 18th June 2021 at 18:02                           </td>
+  </tr>
+  <tr>
+    <td width="20%">Results Files</td>
+    <td width="80%">
+    "C:\demo\ED_WorkspaceV2\BankDemo_Training\Coverage\BANKDTRN.tcz"
+    &nbsp
+  </tr>
+  </td>
+  <tr>
+    <td width="20%">Report Parameters</td>
+    <td width="80%">
+      REPORTLOC
+      NOBLOCKNUM
+      NOCALLS
+      NODATAFREQ
+      NOVERBS
+      NOCOMBINE
+    </td>
+  </tr>
+</table>
+<br><br>
+
+<table width="100%" border="0"
+  cellspacing="0" cellpadding="0"  class="outline">
+<tr>
+  <td>
+    <table width="100%" border="0"
+    cellspacing="1" cellpadding="3">
+    <tr>
+    <td class="leftTitle" width="20%">
+    &nbsp;Contents&nbsp;</td>
+<td align="right" width="80%" class="rightTitle">&nbsp;</td>
+</tr>
+<tr class="content">
+<td colspan="2">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table border="1" width="100%" class="content">
+  <tr>
+    <td width="20%"><b>Program</b></td>
+    <td width="60%"><b>
+   Navigate to Unexecuted Blocks in</b><br>
+<INPUT TYPE="radio" NAME="selectWin" CHECKED
+    onclick="return rad_onclick(0)"
+    > This Window
+<INPUT TYPE="radio" NAME="selectWin"
+    onclick="return rad_onclick(1)"
+    > New Window
+   </td>
+  <tr>
+    <td>
+       <a href="#ZBNKPRT121061817581987">
+        ZBNKPRT1.
+       </a>
+    </td>
+    <td>
+       <select size="1" name="src_link00001"style="width:400">
+       <option value="#0000100003">
+   588           MOVE LENGTH OF WS-EXEC-PARM-DATA TO WS-EXEC-PARM-LL
+        </option>
+       <option value="#0000100005">
+   591           MOVE LK-EXEC-PARM-DATA (1:WS-EXEC-PARM-LL)
+        </option>
+       <option value="#0000100008">
+   601     ELSE
+        </option>
+       <option value="#0000100010">
+   612        SET EMAIL-REQUIRED TO TRUE
+        </option>
+       <option value="#0000100037">
+   675           MOVE SPACES TO PRINTOUT-REC
+        </option>
+       <option value="#0000100065">
+   809     ELSE
+        </option>
+       <option value="#0000100066">
+   813        MOVE WS-EXTRACT-STATUS TO WS-IO-STATUS
+        </option>
+       <option value="#0000100067">
+   815        PERFORM ABORT-PROGRAM
+        </option>
+       <option value="#0000100071">
+   826        ELSE
+        </option>
+       <option value="#0000100072">
+   830            MOVE WS-EXTRACT-STATUS TO WS-IO-STATUS
+        </option>
+       <option value="#0000100073">
+   832            PERFORM ABORT-PROGRAM
+        </option>
+       <option value="#0000100076">
+   845     ELSE
+        </option>
+       <option value="#0000100077">
+   849        MOVE WS-EXTRACT-STATUS TO WS-IO-STATUS
+        </option>
+       <option value="#0000100078">
+   851        PERFORM ABORT-PROGRAM
+        </option>
+       <option value="#0000100081">
+   863     ELSE
+        </option>
+       <option value="#0000100082">
+   867        MOVE WS-PRINTOUT-STATUS TO WS-IO-STATUS
+        </option>
+       <option value="#0000100083">
+   869        PERFORM ABORT-PROGRAM
+        </option>
+       <option value="#0000100086">
+   879           MOVE 'PRINTOUT Error Writing file ...'
+        </option>
+       <option value="#0000100087">
+   882           MOVE WS-PRINTOUT-STATUS TO WS-IO-STATUS
+        </option>
+       <option value="#0000100088">
+   884           PERFORM ABORT-PROGRAM
+        </option>
+       <option value="#0000100091">
+   897     ELSE
+        </option>
+       <option value="#0000100092">
+   901        MOVE WS-PRINTOUT-STATUS TO WS-IO-STATUS
+        </option>
+       <option value="#0000100093">
+   903        PERFORM ABORT-PROGRAM
+        </option>
+       <option value="#0000100094">
+   912 DISPLAY-IO-STATUS.
+        </option>
+       <option value="#0000100095">
+   914        MOVE SPACE TO WS-CONSOLE-MESSAGE
+        </option>
+       <option value="#0000100096">
+   919     ELSE
+        </option>
+       <option value="#0000100099">
+   943        GO TO EXPAND-STATE-PROV-EXIT
+        </option>
+       <option value="#0000100104">
+   959 ABORT-PROGRAM.
+        </option>
+       <option value="#0000100105">
+   961        PERFORM DISPLAY-CONSOLE-MESSAGE
+        </option>
+       <option value="#0000100106">
+   963     MOVE 'Program is abending...'  TO WS-CONSOLE-MESSAGE.
+        </option>
+       <option value="#0000100107">
+   966     IF RETURN-CODE IS NOT EQUAL TO RETURN-CODE
+        </option>
+       <option value="#0000100108">
+   967        CALL 'CEE3DMP' USING WS-CEE3DMP-DMP-TITLE
+        </option>
+       <option value="#0000100109">
+   970        CALL 'CEELOCT' USING WS-CEELOCT-DATE-LILIAN
+        </option>
+       <option value="#0000100110">
+   975     MOVE 16 TO RETURN-CODE.
+        </option>
+        </select>
+
+    <td width="4%">
+     <INPUT TYPE="button" NAME="but_link00001"
+       value=GO
+  onclick="return butCheck_onclick(src_link00001)"> </td>
+
+    <td width="20%">
+      <a href="#ZBNKPRT121061817581987SUMMARY">
+      Summary</a>
+   </td>
+  </tr>
+  </td>
+  </table>
+<p>&nbsp;</p>
+<table border="1" width="100%" class="content">
+  <tr>
+    <td width="20%">
+     <big><b>ZBNKPRT1.     </big></b>
+  </tr>
+    <td width="80%">
+<a name="ZBNKPRT121061817581987">
+ZBNKPRT1
+ <br> Compiled 18th June 2021 at 17:58:19.87</a>
+  </tr>
+  </tr>
+</table>
+ <pre>
+line no                                                                            count
+---- --                                                                            -----
+</FONT>   578     PERFORM RUN-TIME.                                                           1
+   579
+   580     MOVE ZEROES TO WS-EXEC-PARM-LL.                                             1
+   581     MOVE SPACES TO WS-EXEC-PARM-DATA.                                           1
+   582
+   583     SET WS-PARM-PTR TO ADDRESS OF LK-EXEC-PARM.                                 1
+   584     IF WS-PARM-PTR-NUM IS NOT EQUAL TO ZEROS                                    1
+   585        MOVE LK-EXEC-PARM-LL TO WS-EXEC-PARM-LL                                  1
+   586        IF WS-EXEC-PARM-LL IS GREATER THAN                                       1
+   587             LENGTH OF WS-EXEC-PARM-DATA
+<FONT COLOR="0050a0"><a name="0000100003">   588           MOVE LENGTH OF WS-EXEC-PARM-DATA TO WS-EXEC-PARM-LL                   -            </a>
+   589        END-IF                                                                   -
+</FONT>   590        IF WS-EXEC-PARM-LL IS GREATER THAN ZERO                                  1
+<FONT COLOR="0050a0"><a name="0000100005">   591           MOVE LK-EXEC-PARM-DATA (1:WS-EXEC-PARM-LL)                            -            </a>
+   592             TO WS-EXEC-PARM-DATA (1:WS-EXEC-PARM-LL)
+<a name="0000100005">   593        END-IF                                                                   -            </a>
+   594     END-IF.                                                                     -
+   595
+</FONT>   596     SET EMAIL-NOT-REQUIRED TO TRUE.                                             1
+   597     IF WS-EXEC-PARM-LL IS EQUAL TO ZERO                                         1
+   598        MOVE 'No exec card parm present'                                         1
+   599          TO WS-CONSOLE-MESSAGE
+   600        PERFORM DISPLAY-CONSOLE-MESSAGE                                          1
+<FONT COLOR="0050a0"><a name="0000100008">   601     ELSE                                                                        -            </a>
+   602       MOVE SPACES TO WS-CONSOLE-MESSAGE                                         -
+   603       STRING 'Exec parm is "' DELIMITED BY SIZE                                 -
+   604              WS-EXEC-PARM-DATA (1:WS-EXEC-PARM-LL)
+   605                DELIMITED BY SIZE
+   606              '"' DELIMITED BY SIZE
+   607         INTO WS-CONSOLE-MESSAGE
+<a name="0000100008">   608       PERFORM DISPLAY-CONSOLE-MESSAGE                                           -            </a>
+   609     END-IF.                                                                     -
+   610
+</FONT>   611     IF FUNCTION UPPER-CASE(WS-EXEC-PARM-DATA) IS EQUAL TO 'EMAIL'               1
+<FONT COLOR="0050a0"><a name="0000100010">   612        SET EMAIL-REQUIRED TO TRUE                                               -            </a>
+   613     END-IF.                                                                     -
+   614
+</FONT>   615     ACCEPT WS-SYS-DATE FROM DAY.                                                1
+   616     SET DD-ENV-NULL TO TRUE.                                                    1
+   617     SET DDI-YYDDD TO TRUE.                                                      1
+   618     MOVE WS-SYS-DATE TO DDI-DATA.                                               1
+   619     SET DDO-DD-MMM-YYYY TO TRUE.                                                1
+   620     CALL 'UDATECNV' USING WS-DATE-WORK-AREA.                                    1
+   621     MOVE FUNCTION LOWER-CASE(DDO-DATA-DD-MMM-YYYY-MMM(2:2))                     1
+   622       TO DDO-DATA-DD-MMM-YYYY-MMM(2:2).
+   623     MOVE DDO-DATA TO WS-PRINT-DATE.                                             1
+   624
+   625     PERFORM EXTRACT-OPEN.                                                       1
+   626     PERFORM PRINTOUT-OPEN.                                                      1
+   627
+   628     PERFORM UNTIL WS-END-OF-FILE = 'YES'                                        1
+   629       IF WS-END-OF-FILE = 'NO '                                                58
+   630          PERFORM EXTRACT-GET                                                   58
+   631          IF WS-END-OF-FILE = 'NO '                                             58
+   632             ADD 1 TO WS-RECORDS-READ                                           57
+   633             IF WS-RECORDS-READ IS LESS THAN 6                                  57
+   634                DISPLAY BANKXT01-REC1 UPON CONSOLE                               5
+   635             ELSE                                                               52
+   636                IF WS-RECORDS-READ IS EQUAL TO 6                                52
+   637                   MOVE 'Suppressing record display...'                          1
+   638                      TO WS-CONSOLE-MESSAGE
+   639                   PERFORM DISPLAY-CONSOLE-MESSAGE                               1
+   640                END-IF                                                           1
+   641             END-IF                                                              1
+   642             PERFORM FORMAT-AND-PRINT                                           57
+   643          ELSE                                                                   1
+   644             PERFORM PRINT-TOTAL-TXNS                                            1
+   645             PERFORM PRINT-TOTAL-ASSETS                                          1
+   646          END-IF                                                                 1
+   647       END-IF                                                                    1
+   648     END-PERFORM.                                                                1
+   649
+   650     PERFORM EXTRACT-CLOSE.                                                      1
+   651     PERFORM PRINTOUT-CLOSE.                                                     1
+   652
+   653     PERFORM DISPLAY-CONSOLE-MESSAGE.                                            1
+   654     MOVE 'End Of Job'                                                           1
+   655       TO WS-CONSOLE-MESSAGE.
+   656     PERFORM DISPLAY-CONSOLE-MESSAGE.                                            1
+   657
+   658     PERFORM RUN-TIME.                                                           1
+   659
+   660     MOVE 0 TO RETURN-CODE.                                                      1
+   661
+   662     GOBACK.                                                                     1
+   663
+   664*****************************************************************
+   665* Format print lines                                            *
+   666*****************************************************************
+   667 FORMAT-AND-PRINT.                                                              57
+   668     IF BANKXT01-1-TYPE IS EQUAL TO '0'                                         57
+   669        MOVE BANKXT01-0-EMAIL TO WS-SAVED-EMAIL                                  1
+   670     END-IF.                                                                     1
+   671     IF BANKXT01-1-TYPE IS EQUAL TO '1'                                         57
+   672        PERFORM PRINT-TOTAL-TXNS                                                 1
+   673        PERFORM PRINT-TOTAL-ASSETS                                               1
+   674        IF EMAIL-REQUIRED                                                        1
+<FONT COLOR="0050a0"><a name="0000100037">   675           MOVE SPACES TO PRINTOUT-REC                                           -            </a>
+   676           STRING 'SENDTO: ' DELIMITED BY SIZE                                   -
+   677                  WS-SAVED-EMAIL DELIMITED BY SPACE
+   678             INTO PRINTOUT-REC
+<a name="0000100037">   679           PERFORM PRINTOUT-PUT                                                  -            </a>
+   680        END-IF                                                                   -
+</FONT>   681        MOVE WS-LINE1 TO PRINTOUT-REC                                            1
+   682        PERFORM PRINTOUT-PUT                                                     1
+   683        MOVE WS-LINE2 TO PRINTOUT-REC                                            1
+   684        PERFORM PRINTOUT-PUT                                                     1
+   685        MOVE '0' TO WS-LINE3-CC                                                  1
+   686        MOVE BANKXT01-1-NAME TO WS-LINE3-NAME-ADDR                               1
+   687        MOVE WS-PRINTED-DATE TO WS-LINE3-DATE                                    1
+   688        MOVE WS-LINE3 TO PRINTOUT-REC                                            1
+   689        PERFORM PRINTOUT-PUT                                                     1
+   690        MOVE ' ' TO WS-LINE3-CC                                                  1
+   691        MOVE BANKXT01-1-ADDR1 TO WS-LINE3-NAME-ADDR                              1
+   692        ACCEPT WS-SYS-TIME FROM TIME                                             1
+   693        MOVE WS-SYS-TIME (1:2) TO WS-PRINT-TIME-HH                               1
+   694        MOVE ':' TO WS-PRINT-TIME-DOT1                                           1
+   695        MOVE WS-SYS-TIME (3:2) TO WS-PRINT-TIME-MM                               1
+   696        MOVE ':' TO WS-PRINT-TIME-DOT2                                           1
+   697        MOVE WS-SYS-TIME (5:2) TO WS-PRINT-TIME-SS                               1
+   698        MOVE WS-PRINTED-TIME TO WS-LINE3-DATE                                    1
+   699        MOVE WS-LINE3 TO PRINTOUT-REC                                            1
+   700        PERFORM PRINTOUT-PUT                                                     1
+   701        MOVE ' ' TO WS-LINE3-CC                                                  1
+   702        MOVE BANKXT01-1-ADDR2 TO WS-LINE3-NAME-ADDR                              1
+   703        MOVE SPACES TO WS-LINE3-DATE                                             1
+   704        MOVE WS-LINE3 TO PRINTOUT-REC                                            1
+   705        PERFORM PRINTOUT-PUT                                                     1
+   706        MOVE ' ' TO WS-LINE3-CC                                                  1
+   707        MOVE BANKXT01-1-STATE TO STATE-PROV-WK-CODE                              1
+   708        PERFORM EXPAND-STATE-PROV THRU                                           1
+   709                EXPAND-STATE-PROV-EXIT
+   710        MOVE STATE-PROV-WK-NAME TO WS-LINE3-NAME-ADDR                            1
+   711        MOVE SPACES TO WS-LINE3-DATE                                             1
+   712        MOVE WS-LINE3 TO PRINTOUT-REC                                            1
+   713        PERFORM PRINTOUT-PUT                                                     1
+   714        MOVE ' ' TO WS-LINE3-CC                                                  1
+   715        MOVE BANKXT01-1-CNTRY TO WS-LINE3-NAME-ADDR                              1
+   716        MOVE SPACES TO WS-LINE3-DATE                                             1
+   717        MOVE WS-LINE3 TO PRINTOUT-REC                                            1
+   718        PERFORM PRINTOUT-PUT                                                     1
+   719        MOVE ' ' TO WS-LINE3-CC                                                  1
+   720        MOVE BANKXT01-1-PST-CDE TO WS-LINE3-NAME-ADDR                            1
+   721        MOVE SPACES TO WS-LINE3-DATE                                             1
+   722        MOVE WS-LINE3 TO PRINTOUT-REC                                            1
+   723        PERFORM PRINTOUT-PUT                                                     1
+   724        MOVE WS-LINE4 TO PRINTOUT-REC                                            1
+   725        PERFORM PRINTOUT-PUT                                                     1
+   726        MOVE ZERO TO WS-TOTAL-TXNS                                               1
+   727        MOVE ZERO TO WS-TOTAL-ASSETS                                             1
+   728     END-IF.                                                                     1
+   729     IF BANKXT01-2-TYPE IS EQUAL TO '2'                                         57
+   730        PERFORM PRINT-TOTAL-TXNS                                                 5
+   731        MOVE SPACES TO WS-LINE5                                                  5
+   732        MOVE BANKXT01-2-ACC-NO TO WS-LINE5-ACC-NO                                5
+   733        MOVE 'Last statement' TO WS-LINE5-DESC-PT1                               5
+   734        MOVE BANKXT01-2-ACC-DESC TO WS-LINE5-DESC-PT2                            5
+   735        MOVE BANKXT01-2-ACC-LAST-STMT-DTE TO DDI-DATA                            5
+   736        SET DD-ENV-NULL TO TRUE                                                  5
+   737        SET DDI-ISO TO TRUE                                                      5
+   738        SET DDO-DD-MMM-YYYY TO TRUE                                              5
+   739        CALL 'UDATECNV' USING WS-DATE-WORK-AREA                                  5
+   740        MOVE DDO-DATA TO WS-LINE5-DATE                                           5
+   741        MOVE BANKXT01-2-ACC-CURR-BAL TO WS-LINE5-BALANCE                         5
+   742        ADD BANKXT01-2-ACC-CURR-BAL TO WS-TOTAL-ASSETS                           5
+   743        MOVE WS-LINE5 TO PRINTOUT-REC                                            5
+   744        PERFORM PRINTOUT-PUT                                                     5
+   745     END-IF.                                                                     5
+   746     IF BANKXT01-3-TYPE IS EQUAL TO '3'                                         57
+   747        MOVE SPACES TO WS-LINE5                                                 50
+   748        MOVE BANKXT01-3-DESC TO WS-LINE5-DESC (4:30)                            50
+   749        MOVE BANKXT01-3-TIMESTAMP (1:10) TO DDI-DATA                            50
+   750        SET DD-ENV-NULL TO TRUE                                                 50
+   751        SET DDI-ISO TO TRUE                                                     50
+   752        SET DDO-DD-MMM-YYYY TO TRUE                                             50
+   753        CALL 'UDATECNV' USING WS-DATE-WORK-AREA                                 50
+   754        MOVE DDO-DATA TO WS-LINE5-DATE                                          50
+   755        MOVE BANKXT01-3-AMOUNT TO WS-LINE5-AMOUNT                               50
+   756        ADD BANKXT01-3-AMOUNT TO WS-TOTAL-TXNS                                  50
+   757        SET TXNS-PRINTED TO TRUE                                                50
+   758        MOVE WS-LINE5 TO PRINTOUT-REC                                           50
+   759        PERFORM PRINTOUT-PUT                                                    50
+   760     END-IF.                                                                    50
+   761
+   762*****************************************************************
+   763* Format and print transaction totals                           *
+   764*****************************************************************
+   765 PRINT-TOTAL-TXNS.                                                               7
+   766     IF TXNS-PRINTED                                                             7
+   767        MOVE SPACES TO WS-LINE5                                                  1
+   768        MOVE '------------' TO WS-LINE5-AMOUNT-DASH                              1
+   769        MOVE WS-LINE5 TO PRINTOUT-REC                                            1
+   770        PERFORM PRINTOUT-PUT                                                     1
+   771        MOVE SPACES TO WS-LINE5-DESC                                             1
+   772        MOVE 'Total transactions' TO WS-LINE5-DESC (4:30)                        1
+   773        MOVE WS-TOTAL-TXNS TO WS-LINE5-AMOUNT                                    1
+   774        MOVE ZERO TO WS-TOTAL-TXNS                                               1
+   775        SET NO-TXNS-PRINTED TO TRUE                                              1
+   776        MOVE WS-LINE5 TO PRINTOUT-REC                                            1
+   777        PERFORM PRINTOUT-PUT                                                     1
+   778     END-IF.                                                                     1
+   779
+   780
+   781*****************************************************************
+   782* Format and print "page" totals                                *
+   783*****************************************************************
+   784 PRINT-TOTAL-ASSETS.                                                             2
+   785     IF WS-FIRST-REC IS EQUAL TO 'YES'                                           2
+   786        MOVE 'NO' TO WS-FIRST-REC                                                1
+   787        SET NO-TXNS-PRINTED TO TRUE                                              1
+   788     ELSE                                                                        1
+   789        MOVE SPACES TO WS-LINE5                                                  1
+   790        MOVE '------------' TO WS-LINE5-BALANCE-DASH                             1
+   791        MOVE WS-LINE5 TO PRINTOUT-REC                                            1
+   792        PERFORM PRINTOUT-PUT                                                     1
+   793        MOVE SPACES TO WS-LINE5                                                  1
+   794        MOVE 'Total Assets' TO WS-LINE5-DESC                                     1
+   795        MOVE WS-TOTAL-ASSETS TO WS-LINE5-BALANCE                                 1
+   796        MOVE WS-LINE5 TO PRINTOUT-REC                                            1
+   797        PERFORM PRINTOUT-PUT                                                     1
+   798     END-IF.                                                                     1
+   799
+   800*****************************************************************
+   801* Open the EXTRACTed data file                                 *
+   802*****************************************************************
+   803 EXTRACT-OPEN.                                                                   1
+   804     OPEN INPUT EXTRACT-FILE.                                                    1
+   805     IF WS-EXTRACT-STATUS = '00'                                                 1
+   806        MOVE 'EXTRACT file opened OK'                                            1
+   807          TO WS-CONSOLE-MESSAGE
+   808        PERFORM DISPLAY-CONSOLE-MESSAGE                                          1
+<FONT COLOR="0050a0"><a name="0000100065">   809     ELSE                                                                        -            </a>
+   810        MOVE 'EXTRACT file open failure...'                                      -
+   811          TO WS-CONSOLE-MESSAGE
+<a name="0000100065">   812        PERFORM DISPLAY-CONSOLE-MESSAGE                                          -            </a>
+<a name="0000100066">   813        MOVE WS-EXTRACT-STATUS TO WS-IO-STATUS                                   -            </a>
+   814        PERFORM DISPLAY-IO-STATUS                                                -
+<a name="0000100067">   815        PERFORM ABORT-PROGRAM                                                    -            </a>
+   816        END-IF.                                                                  -
+   817
+   818*****************************************************************
+   819* Read a record from the EXTRACTed data file                    *
+   820*****************************************************************
+</FONT>   821 EXTRACT-GET.                                                                   58
+   822     READ EXTRACT-FILE.                                                         58
+   823     IF WS-EXTRACT-STATUS NOT = '00'                                            58
+   824        IF WS-EXTRACT-STATUS = '10'                                              1
+   825           MOVE 'YES' TO WS-END-OF-FILE                                          1
+<FONT COLOR="0050a0"><a name="0000100071">   826        ELSE                                                                     -            </a>
+   827           MOVE 'EXTRACT Error readng file ...'                                  -
+   828             TO WS-CONSOLE-MESSAGE
+<a name="0000100071">   829            PERFORM DISPLAY-CONSOLE-MESSAGE                                      -            </a>
+<a name="0000100072">   830            MOVE WS-EXTRACT-STATUS TO WS-IO-STATUS                               -            </a>
+   831            PERFORM DISPLAY-IO-STATUS                                            -
+<a name="0000100073">   832            PERFORM ABORT-PROGRAM                                                -            </a>
+   833        END-IF                                                                   -
+   834     END-IF.                                                                     -
+   835
+   836*****************************************************************
+   837* Close the EXTRACTed data file                                 *
+   838*****************************************************************
+</FONT>   839 EXTRACT-CLOSE.                                                                  1
+   840     CLOSE EXTRACT-FILE.                                                         1
+   841     IF WS-EXTRACT-STATUS = '00'                                                 1
+   842        MOVE 'EXTRACT file closed OK'                                            1
+   843          TO WS-CONSOLE-MESSAGE
+   844        PERFORM DISPLAY-CONSOLE-MESSAGE                                          1
+<FONT COLOR="0050a0"><a name="0000100076">   845     ELSE                                                                        -            </a>
+   846        MOVE 'EXTRACT file close failure...'                                     -
+   847          TO WS-CONSOLE-MESSAGE
+<a name="0000100076">   848        PERFORM DISPLAY-CONSOLE-MESSAGE                                          -            </a>
+<a name="0000100077">   849        MOVE WS-EXTRACT-STATUS TO WS-IO-STATUS                                   -            </a>
+   850        PERFORM DISPLAY-IO-STATUS                                                -
+<a name="0000100078">   851        PERFORM ABORT-PROGRAM                                                    -            </a>
+   852     END-IF.                                                                     -
+   853
+   854*****************************************************************
+   855* Open the seqential print file                                 *
+   856*****************************************************************
+</FONT>   857 PRINTOUT-OPEN.                                                                  1
+   858     OPEN OUTPUT PRINTOUT-FILE.                                                  1
+   859     IF WS-PRINTOUT-STATUS = '00'                                                1
+   860        MOVE 'PRINTOUT file opened OK'                                           1
+   861          TO WS-CONSOLE-MESSAGE
+   862        PERFORM DISPLAY-CONSOLE-MESSAGE                                          1
+<FONT COLOR="0050a0"><a name="0000100081">   863     ELSE                                                                        -            </a>
+   864        MOVE 'PRINTOUT file open failure...'                                     -
+   865          TO WS-CONSOLE-MESSAGE
+<a name="0000100081">   866        PERFORM DISPLAY-CONSOLE-MESSAGE                                          -            </a>
+<a name="0000100082">   867        MOVE WS-PRINTOUT-STATUS TO WS-IO-STATUS                                  -            </a>
+   868        PERFORM DISPLAY-IO-STATUS                                                -
+<a name="0000100083">   869        PERFORM ABORT-PROGRAM                                                    -            </a>
+   870        END-IF.                                                                  -
+   871
+   872*****************************************************************
+   873* Write a record to the squential file                          *
+   874*****************************************************************
+</FONT>   875 PRINTOUT-PUT.                                                                  68
+   876     IF PRINTOUT-REC IS NOT EQUAL TO SPACES                                     68
+   877        WRITE PRINTOUT-REC                                                      68
+   878        IF WS-PRINTOUT-STATUS NOT = '00'                                        68
+<FONT COLOR="0050a0"><a name="0000100086">   879           MOVE 'PRINTOUT Error Writing file ...'                                -            </a>
+   880             TO WS-CONSOLE-MESSAGE
+<a name="0000100086">   881           PERFORM DISPLAY-CONSOLE-MESSAGE                                       -            </a>
+<a name="0000100087">   882           MOVE WS-PRINTOUT-STATUS TO WS-IO-STATUS                               -            </a>
+   883           PERFORM DISPLAY-IO-STATUS                                             -
+<a name="0000100088">   884           PERFORM ABORT-PROGRAM                                                 -            </a>
+   885        END-IF                                                                   -
+   886     END-IF.                                                                     -
+   887
+   888*****************************************************************
+   889* Close the seqential print file                                *
+   890*****************************************************************
+</FONT>   891 PRINTOUT-CLOSE.                                                                 1
+   892     CLOSE PRINTOUT-FILE.                                                        1
+   893     IF WS-PRINTOUT-STATUS = '00'                                                1
+   894        MOVE 'PRINTOUT file closed OK'                                           1
+   895          TO WS-CONSOLE-MESSAGE
+   896        PERFORM DISPLAY-CONSOLE-MESSAGE                                          1
+<FONT COLOR="0050a0"><a name="0000100091">   897     ELSE                                                                        -            </a>
+   898        MOVE 'PRINTOUT file close failure...'                                    -
+   899          TO WS-CONSOLE-MESSAGE
+<a name="0000100091">   900        PERFORM DISPLAY-CONSOLE-MESSAGE                                          -            </a>
+<a name="0000100092">   901        MOVE WS-PRINTOUT-STATUS TO WS-IO-STATUS                                  -            </a>
+   902        PERFORM DISPLAY-IO-STATUS                                                -
+<a name="0000100093">   903        PERFORM ABORT-PROGRAM                                                    -            </a>
+   904     END-IF.                                                                     -
+   905
+   906*****************************************************************
+   907* Display the file status bytes. This routine will display as   *
+   908* two digits if the full two byte file status is numeric. If    *
+   909* second byte is non-numeric then it will be treated as a       *
+   910* binary number.                                                *
+   911*****************************************************************
+<a name="0000100094">   912 DISPLAY-IO-STATUS.                                                              -            </a>
+   913     IF WS-IO-STATUS NUMERIC                                                     -
+<a name="0000100095">   914        MOVE SPACE TO WS-CONSOLE-MESSAGE                                         -            </a>
+   915        STRING 'File status -' DELIMITED BY SIZE                                 -
+   916               WS-IO-STATUS DELIMITED BY SIZE
+   917          INTO WS-CONSOLE-MESSAGE
+<a name="0000100095">   918        PERFORM DISPLAY-CONSOLE-MESSAGE                                          -            </a>
+<a name="0000100096">   919     ELSE                                                                        -            </a>
+   920        SUBTRACT WS-TWO-BYTES-BINARY FROM WS-TWO-BYTES-BINARY                    -
+   921        MOVE WS-IO-STAT2 TO WS-TWO-BYTES-RIGHT                                   -
+   922        MOVE SPACE TO WS-CONSOLE-MESSAGE                                         -
+   923        STRING 'File status -' DELIMITED BY SIZE                                 -
+   924               WS-IO-STAT1 DELIMITED BY SIZE
+   925               '/' DELIMITED BY SIZE
+   926               WS-TWO-BYTES DELIMITED BY SIZE
+   927          INTO WS-CONSOLE-MESSAGE
+<a name="0000100096">   928        PERFORM DISPLAY-CONSOLE-MESSAGE                                          -            </a>
+   929     END-IF.                                                                     -
+   930
+   931*****************************************************************
+   932* Expand the 2 character state/prove code to its full text      *
+   933*****************************************************************
+</FONT>   934 EXPAND-STATE-PROV.                                                              1
+   935     MOVE 0 TO STATE-PROV-SUB.                                                   1
+   936     DIVIDE LENGTH OF STATE-PROV-DATA (1) INTO                                   1
+   937       LENGTH OF STATE-PROV-TABLE
+   938         GIVING STATE-PROV-COUNT.
+   939     MOVE STATE-PROV-WK-CODE TO STATE-PROV-WK-NAME.                              1
+   940 EXPAND-STATE-PROV-LOOP.                                                        54
+   941     ADD 1 TO STATE-PROV-SUB.                                                   54
+   942     IF STATE-PROV-SUB IS GREATER THAN STATE-PROV-COUNT                         54
+<FONT COLOR="0050a0"><a name="0000100099">   943        GO TO EXPAND-STATE-PROV-EXIT                                             -            </a>
+   944     END-IF.                                                                     -
+</FONT>   945     IF STATE-PROV-WK-CODE IS EQUAL TO                                          54
+   946          STATE-PROV-CODE (STATE-PROV-SUB)
+   947        MOVE STATE-PROV-NAME (STATE-PROV-SUB) TO                                 1
+   948          STATE-PROV-WK-NAME
+   949        GO TO EXPAND-STATE-PROV-EXIT                                             1
+   950     END-IF.                                                                     1
+   951     GO TO EXPAND-STATE-PROV-LOOP.                                              53
+   952 EXPAND-STATE-PROV-EXIT.                                                         1
+   953     EXIT.                                                                       1
+   954
+   955*****************************************************************
+   956* 'ABORT' the program.                                          *
+   957* Post a message to the console and issue a goback              *
+   958*****************************************************************
+<FONT COLOR="0050a0"><a name="0000100104">   959 ABORT-PROGRAM.                                                                  -            </a>
+   960     IF WS-CONSOLE-MESSAGE NOT = SPACES                                          -
+<a name="0000100105">   961        PERFORM DISPLAY-CONSOLE-MESSAGE                                          -            </a>
+   962     END-IF.                                                                     -
+<a name="0000100106">   963     MOVE 'Program is abending...'  TO WS-CONSOLE-MESSAGE.                       -            </a>
+   964     PERFORM DISPLAY-CONSOLE-MESSAGE.                                            -
+   965* Add some LE routines to identify but dont execute them
+<a name="0000100107">   966     IF RETURN-CODE IS NOT EQUAL TO RETURN-CODE                                  -            </a>
+<a name="0000100108">   967        CALL 'CEE3DMP' USING WS-CEE3DMP-DMP-TITLE                                -            </a>
+   968                             WS-CEE3DMP-DMP-OPTIONS
+   969                             WS-CEE3DMP-FEEDBACK
+<a name="0000100109">   970        CALL 'CEELOCT' USING WS-CEELOCT-DATE-LILIAN                              -            </a>
+   971                             WS-CEELOCT-SECS-LILIAN
+   972                             WS-CEELOCT-TIME-GREGORIAN
+   973                             WS-CEELOCT-FEEDBACK
+<a name="0000100109">   974     END-IF.                                                                     -            </a>
+<a name="0000100110">   975     MOVE 16 TO RETURN-CODE.                                                     -            </a>
+   976     GOBACK.                                                                     -
+   977
+   978*****************************************************************
+   979* Display CONSOLE messages...                                   *
+   980*****************************************************************
+</FONT>   981 DISPLAY-CONSOLE-MESSAGE.                                                       11
+   982     DISPLAY 'ZBNKPRT1 - ' WS-CONSOLE-MESSAGE                                   11
+   983       UPON CONSOLE.
+   984     MOVE ALL SPACES TO WS-CONSOLE-MESSAGE.                                     11
+   985
+   986* COPY CTIMERP.
+   987 RUN-TIME.                                                                       2
+   988     IF TIMER-START IS EQUAL TO ZERO                                             2
+   989        ACCEPT TIMER-START FROM TIME                                             1
+   990        MOVE 'Timer started' TO WS-CONSOLE-MESSAGE                               1
+   991        PERFORM DISPLAY-CONSOLE-MESSAGE                                          1
+   992     ELSE                                                                        1
+   993        ACCEPT TIMER-END FROM TIME                                               1
+   994        MOVE 'Timer stopped' TO WS-CONSOLE-MESSAGE                               1
+   995        PERFORM DISPLAY-CONSOLE-MESSAGE                                          1
+   996        COMPUTE TIMER-ELAPSED =                                                  1
+   997                  ((TIMER-END-HH * 60 * 60 * 100) +
+   998                   (TIMER-END-MM * 60 * 100) +
+   999                   (TIMER-END-SS * 100) +
+  1000                    TIMER-END-DD) -
+  1001                  ((TIMER-START-HH * 60 * 60 * 100) +
+  1002                   (TIMER-START-MM * 60 * 100) +
+  1003                   (TIMER-START-SS * 100) +
+  1004                    TIMER-START-DD)
+  1005        MOVE TIMER-ELAPSED-R TO TIMER-RUN-TIME-ELAPSED                           1
+  1006        MOVE TIMER-RUN-TIME TO WS-CONSOLE-MESSAGE                                1
+  1007        PERFORM DISPLAY-CONSOLE-MESSAGE                                          1
+  1008     END-IF.                                                                     1
+  1009
+  1010
+  1011* $ Version 5.99c sequenced on Wednesday 3 Mar 2011 at 1:00pm
+ </pre>
+ <pre>
+       <a name="ZBNKPRT121061817581987SUMMARY">
+ZBNKPRT1 Summary</a>
+Total number of times called      1
+Executed     82 of    116 basic blocks                   70.68%
+Executed    227 of    312 statements                     72.75%
+Executed     14 of     16 sections/paras                 87.50%
+Executed      3 of      5 CALL statements                60.00%
+
+ </pre>
+</form> </body>
+</html>

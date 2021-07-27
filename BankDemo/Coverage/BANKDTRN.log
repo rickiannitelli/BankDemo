@@ -1,0 +1,9 @@
+================================================================================
+"C:\demo\ED_WorkspaceV2\BankDemo_Training/Coverage/BANKDTRN.tcz"
+                                                   Run:   1    18 Jun 21 18:01
+--------------------------------------------------------------------------------
+                      Basic Blocks
+Program      Calls Total  done  left
+-------      ----- -----  ----  ----
+ZBNKPRT1         1   116    82    34  70.68%
+All programs         116
