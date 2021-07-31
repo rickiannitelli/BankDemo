@@ -128,8 +128,7 @@
            PERFORM 212-BUILD-DETAIL-LINE.
            MOVE DETAIL-LINE            TO REPORT-LINE-OUT
            WRITE REPORT-LINE-OUT
-           MOVE ZERO TO CTR-PRODUCTS                        
-           ACCUM-LOYALTY-PTS.
+           MOVE ZERO TO CTR-PRODUCTS.
            ADD 1 TO CTR-ACCOUNTS.
        211-PAGE-CHANGE-RTN.
            MOVE HEADING-1              TO REPORT-LINE-OUT

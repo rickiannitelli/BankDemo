@@ -3,7 +3,6 @@
    <settings xsi:type="projectSettingsContainer">
       <copybook-paths xsi:type="copybookPathsSettings">
          <path enabled="true" name="/BankDemo" type="mfpath"/>
-         <path enabled="false" name="/BankDemo/Data" type="mfpath"/>
          <path enabled="false" name="/BankDemo/cbl" type="mfpath"/>
          <path enabled="false" name="/BankDemo/Coverage" type="mfpath"/>
          <path enabled="false" name="/BankDemo/Profiler" type="mfpath"/>
@@ -12,7 +11,6 @@
       </copybook-paths>
       <build-precedence-paths xsi:type="buildPrecedenceSettings">
          <path enabled="true" name="/BankDemo" type="mfpath"/>
-         <path enabled="true" name="/BankDemo/Data" type="mfpath"/>
          <path enabled="true" name="/BankDemo/cbl" type="mfpath"/>
          <path enabled="true" name="/BankDemo/Coverage" type="mfpath"/>
          <path enabled="true" name="/BankDemo/Profiler" type="mfpath"/>
